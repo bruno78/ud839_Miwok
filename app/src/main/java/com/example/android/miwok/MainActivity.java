@@ -21,9 +21,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mNumbersListTextView;
+    private TextView mNumbersTextView;
+    private TextView mFamilyTextView;
+    private TextView mColorsActivtyTextView;
+    private TextView mPhrasesActivityTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +38,48 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Attaching the layout to the activity
-        mNumbersListTextView = (TextView) findViewById(R.id.numbers);
+        mNumbersTextView = (TextView) findViewById(R.id.numbers);
+        mFamilyTextView = (TextView) findViewById(R.id.family);
+        mColorsActivtyTextView = (TextView) findViewById(R.id.colors);
+        mPhrasesActivityTextView = (TextView) findViewById(R.id.phrases);
+
 
         // Set the onClick listener to Number TextView
-        mNumbersListTextView.setOnClickListener(new View.OnClickListener() {
+        mNumbersTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent numbersActivity = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(numbersActivity);
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
             }
         });
+
+        // Set the onClick listener to Family TextView
+        mFamilyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent familyIntent = new Intent( MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+
+        // Set the onClick listener to Color textView
+        mColorsActivtyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorIntent);
+            }
+        });
+
+        // Set the onClick listener to Phrases textView
+        mPhrasesActivityTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
+
     }
 }
