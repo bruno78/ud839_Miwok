@@ -19,8 +19,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView mNumbersListTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
-    public void openNumbersList(View view) {
-        Intent numbersActivity = new Intent(this, NumbersActivity.class);
-        startActivity(numbersActivity);
+        // Attaching the layout to the activity
+        mNumbersListTextView = (TextView) findViewById(R.id.numbers);
+
+        // Set the onClick listener to Number TextView
+        mNumbersListTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersActivity = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersActivity);
+            }
+        });
     }
 }
