@@ -19,10 +19,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+=======
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+>>>>>>> Starter-code
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView mNumbersTextView;
+    private TextView mFamilyTextView;
+    private TextView mColorsActivtyTextView;
+    private TextView mPhrasesActivityTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         // Find the View that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.numbers);
 
@@ -43,10 +55,25 @@ public class MainActivity extends AppCompatActivity {
                 Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
 
                 // Start the new activity
+=======
+        // Attaching the layout to the activity
+        mNumbersTextView = (TextView) findViewById(R.id.numbers);
+        mFamilyTextView = (TextView) findViewById(R.id.family);
+        mColorsActivtyTextView = (TextView) findViewById(R.id.colors);
+        mPhrasesActivityTextView = (TextView) findViewById(R.id.phrases);
+
+
+        // Set the onClick listener to Number TextView
+        mNumbersTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+>>>>>>> Starter-code
                 startActivity(numbersIntent);
             }
         });
 
+<<<<<<< HEAD
         // Find the View that shows the family category
         TextView family = (TextView) findViewById(R.id.family);
 
@@ -59,10 +86,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
 
                 // Start the new activity
+=======
+        // Set the onClick listener to Family TextView
+        mFamilyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent familyIntent = new Intent( MainActivity.this, FamilyActivity.class);
+>>>>>>> Starter-code
                 startActivity(familyIntent);
             }
         });
 
+<<<<<<< HEAD
         // Find the View that shows the colors category
         TextView colors = (TextView) findViewById(R.id.colors);
 
@@ -94,5 +129,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+=======
+        // Set the onClick listener to Color textView
+        mColorsActivtyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorIntent);
+            }
+        });
+
+        // Set the onClick listener to Phrases textView
+        mPhrasesActivityTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
+
+>>>>>>> Starter-code
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -13,6 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+=======
+>>>>>>> Starter-code
 package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
